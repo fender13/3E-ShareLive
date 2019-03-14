@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Your Website Title" />
+        <meta property="og:description" content="Your description" />
+        <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+        <title>3E-LiveShare</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    </head>
+    <body>
+        <!-- ----------------[NAVBAR]--------------------- -->
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo black-text">3E-LiveShare</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">Explore</a></li>
+                    <li><a href="#" class="black-text">Upload Photo</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ----------------[ALL POSTS]--------------------- -->
+        <div class="explore-content" id="all-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="col" id="content-container">
+                        <div class="col s6 offset-s3" id="one-post">
+                            <div class="card" id="post">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="background2.jpg" />
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Title<i class="material-icons right">more_vert</i></span>
+                                    <!-- <p><a href="#">This is a link</a></p> -->
+                                    <!-- ----------------[FACEBOOK SHARE BUTTON]--------------------- -->
+                                    <div class="fb-share-button" data-href="https://cdn.shibe.online/shibes/45552b6892c3ac5f2958b9eb4784b73e30df26d7.jpg" data-layout="button_count"></div>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s2" style="position: fixed; right: 15rem;">
+                        <div id="person-profile" class="card grey darken-3">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="https://ya-webdesign.com/images/profile-avatar-png-15.png" />
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator white-text text-darken-4">John Doe<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    <a href="#">edit profile</a>
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                <p>
+                                    Here is some more information about this product that is only revealed once clicked on.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div hidden id="app">
+            <!-- ----------------[ADD POSTS]--------------------- -->
+            <div id="add-post" class="container">
+                <div class="row">
+                    <div id="form-add" class="container fixed col s6 offset-s3">
+                        <div class="row">
+                            <div class="col m12 s12">
+                                <h3 class="center-align">
+                                    Upload Photo
+                                </h3>
+                                <div class="row">
+                                    <form class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s8 offset-s2">
+                                                <input id="title" type="text" class="validate" autocomplete="off" />
+                                                <label for="title">Title</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s8 offset-s2">
+                                                <div class="file-field input-field">
+                                                    <div class="btn grey darken-3">
+                                                        <span>File</span>
+                                                        <input type="file" />
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row center">
+                                            <div class="input-field col s8 offset-s2">
+                                                <button class="btn waves-effect waves-hard green accent-4" type="submit" name="action">
+                                                    Submit
+                                                    <i class="material-icons right">send</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row center">
+                                            <div class="input-field col s8 offset-s2">
+                                                <button class="btn waves-effect waves-hard grey" type="submit" name="action">
+                                                    Cancel
+                                                    <i class="material-icons right">cancel</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="home-page">
+                <!-- ----------------[FOTO #1]--------------------- -->
+                <div id="index-banner" class="parallax-container">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <br /><br />
+                            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+                            <div class="row center">
+                                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                            </div>
+                            <div class="row center">
+                                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                            </div>
+                            <br /><br />
+                        </div>
+                    </div>
+                    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1" /></div>
+                </div>
+
+                <!-- ----------------[POINTS]--------------------- -->
+                <div class="container">
+                    <div class="section">
+                        <!--   Icon Section   -->
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                                    <h5 class="center">Speeds up development</h5>
+
+                                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                                    <h5 class="center">User Experience Focused</h5>
+
+                                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                                    <h5 class="center">Easy to work with</h5>
+
+                                    <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------[FOTO #2]--------------------- -->
+                <div class="parallax-container valign-wrapper">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <div class="row center">
+                                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2" /></div>
+                </div>
+
+                <!-- ----------------[CONTACT US]--------------------- -->
+                <div class="container">
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12 center">
+                                <h3><i class="mdi-content-send brown-text"></i></h3>
+                                <h4>Contact Us</h4>
+                                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------[FOTO #3]--------------------- -->
+                <div class="parallax-container valign-wrapper">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <div class="row center">
+                                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3" /></div>
+                </div>
+
+                <!-- ----------------[FOOTER]--------------------- -->
+                <footer class="page-footer teal">
+                    <div class="footer-copyright">
+                        <div class="container">Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- ----------------[FACEBOOK PROPERTY]--------------------- -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            })(document, "script", "facebook-jssdk");
+        </script>
+
+        <!-- ----------------[MATERIALIZE PROPERTY]--------------------- -->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>
