@@ -1,43 +1,41 @@
 const mongoose = require('mongoose')
-
+const ENV = require('dotenv')
+ENV.config()
 
 const dbName = process.env.DB_NAME
 mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true })
 
 const schema = mongoose.Schema
 
-const UserSchema = new schema({
+const SharingSchema = new schema({
     name: {
+        type: String,
+        require: true
+    },
+    path: {
         type: String,
         required: true
     },
-    email: {
-        type: String,
-        required: true,
-    }, 
-    password: {
-        type: String,
-        require: true
+    UserId: {
+        type: schema.Types.ObjectId,
+        reff: 'Users',
+        required: true
     }
 })
 
-UserSchema.pre('save', function(next) {
-    var user = this
-    // only hash the password if it has been modified (or is new)
-    if (!user.isModified('password')) return next()
-    // generate a salt
-    bcrypt.genSalt(saltrounds, function(err, salt) {
-        if (err) return next(err)
-        // hash the password using our new salt
-        bcrypt.hash(user.password, salt, function(err, hash) {
-            if (err) return next(err)
-            // override the cleartext password with the hashed one
-            user.password = hash
-            next()
+SharingSchema.path('name').validate(function (value, respond) {
+    return mongoose
+        .model('Shares')
+        .collection.count({ name: value })
+        .then(function (count) {
+            return !count
         })
-    })
-})
+        .catch(function (err) {
+            throw err
+        })
+}, 'Name already exists.')
 
-var Users = mongoose.model('Users', UserSchema)
 
-module.exports = Users
+var Shares = mongoose.model('Shares', SharingSchema)
+
+module.exports = Shares
