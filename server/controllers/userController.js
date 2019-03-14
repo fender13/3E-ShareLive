@@ -46,7 +46,7 @@ class User {
             } else {
                 const payload = {
                     id: dataUser._id,
-                    email: dataUser.email
+                    username: dataUser.username
                 }
                 const token = jwt.sign(payload, process.env.JWT_SECRET)
                 res.status(200).json({
