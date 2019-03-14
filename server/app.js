@@ -21,7 +21,6 @@ app.use(express.json())
 // set cors
 app.use(cors())
 
-
 // set routers
 app.use('/user', userRouter)
 app.use('/share', shareRouter)
