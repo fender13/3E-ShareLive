@@ -1,5 +1,6 @@
 const path = require('path')
 const multer = require('multer')
+
 const checkFileType = (file, cb) => {
     const filetypes = /jpeg|jpg|png/
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
