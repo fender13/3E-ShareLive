@@ -1,78 +1,74 @@
-let url = 'http://localhost:3000'
+let url = "http://localhost:3000";
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
     data: {
-        title: '',
-        username: '',
-        email: '',
-        password: '',
-        imgSrc: '',
+        title: "",
+        username: "",
+        email: "",
+        password: "",
+        imgSrc: "",
         image: [],
         user: [],
         isLogin: true,
         isLogout: false,
-        posisiton: 'home'
+        posisiton: "home"
     },
 
-    created(){
-        this.allPhoto()
+    created() {
+        this.allPhoto();
     },
     methods: {
-        allPhoto(){
+        allPhoto() {
             axios
                 .get()
                 .then(({ data }) => {
-                    this.image = data
+                    this.image = data;
                 })
-                .catch((err) => {
-                    console.log(err)
-                })
+                .catch(err => {
+                    console.log(err);
+                });
         },
 
-        uploadPhoto(){
+        uploadPhoto() {
             let new_photo = {
                 name: this.imgSrc,
                 title: this.title
-            }
-            axios
-                .post(`${url}`, new_photo)
-                .then(({ data }) => {
-                    this.image.push(data)
-                    this.onClickHome()
-                })
+            };
+            axios.post(`${url}`, new_photo).then(({ data }) => {
+                this.image.push(data);
+                this.onClickHome();
+            });
         },
 
-        onClickUpload(){
-            this.posisiton = 'upload'
+        onClickUpload() {
+            this.posisiton = "upload";
         },
 
-        onClickHome(){
-            this.posisiton = 'home'
+        onClickHome() {
+            this.posisiton = "home";
         },
 
-        onClickProfile(){
-            this.posisiton = 'profile'
+        onClickProfile() {
+            this.posisiton = "profile";
         },
 
-        onClickDelete(index, id){
+        onClickDelete(index, id) {
             axios
                 .delete()
-                .then((data) => {
-                    this.image.splice(index, 1)
+                .then(data => {
+                    this.image.splice(index, 1);
                 })
-                .catch((err) => {
-                    console.log(err)
-                })
+                .catch(err => {
+                    console.log(err);
+                });
         },
 
-        userData(){
-            axios
-                .get()
-                .then(({ data }) => {
-                    this.username = data.username
-                    this.email = data.username
-                })
+        userData() {
+            axios.get().then(({ data }) => {
+                this.username = data.username;
+                this.email = data.username;
+            });
         }
     }
-})
+});
