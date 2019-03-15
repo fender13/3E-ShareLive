@@ -8,7 +8,7 @@ Vue.component('add-login', {
     template: `
     <div id="login-form" class="container">
         <div class="row">
-            <form v-on:submit.prevent="$emit('submit-login', username, password)" class="container col s4 offset-s4" id="login-form-border">
+            <form v-on:submit.prevent="$emit('submit-login', {username: username, password: password})" class="container col s4 offset-s4" id="login-form-border">
                 <h1 class="center">Login</h1>
                 <div class="row">
                     <div class="input-field inline col s12">
@@ -24,7 +24,7 @@ Vue.component('add-login', {
                     </div>
                 </div>
                 <div class="row center">
-                    <button class="btn waves-effect waves-hard black" type="submit" name="action" @click="$emit('submit-login')">
+                    <button class="btn waves-effect waves-hard black" type="submit" name="action">
                         Login
                     </button>
                 </div>

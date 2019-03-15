@@ -48,7 +48,7 @@
             <!-- ----------------[REGISTER]--------------------- -->
             <!-- <template v-if="!isLogin && position ==='register'"> -->
             <div id="register-form" class="container" v-if="!isLogin && position =='register'">
-                    <add-register v-on:submit-register="userRegister"></add-register>
+                    <add-register v-on:submit-register="userRegister($event)"></add-register>
             </div>
             <!-- </template> -->
             <!-- <div id="register-form" class="container">
@@ -84,7 +84,7 @@
             </div> -->
 
             <!-- ----------------[LOGIN]--------------------- -->
-            <add-login v-on:submit-login="userLogin" v-if="!isLogin && position == 'login'" @ke-form-register="onClickRegister"></add-login>
+            <add-login v-on:submit-login="userLogin($event)" v-if="!isLogin && position == 'login'" @ke-form-register="onClickRegister"></add-login>
             <!-- <div id="login-form" class="container">
                 <div class="row">
                     <form class="container col s4 offset-s4" id="login-form-border">
