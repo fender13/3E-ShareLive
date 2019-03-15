@@ -26,7 +26,7 @@ const app = new Vue({
                     this.image = data;
                 })
                 .catch(err => {
-                    console.log(err);
+                    // console.log(err);
                 });
         },
 
