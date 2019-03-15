@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 
 class Photo {
     static uploaded(req, res) {
-        console.log("masok pak")
             console.log(req.file)
             let file = {}
             if (req.file) {
