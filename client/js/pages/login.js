@@ -24,12 +24,12 @@ Vue.component('add-login', {
                     </div>
                 </div>
                 <div class="row center">
-                    <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                    <button class="btn waves-effect waves-hard black" type="submit" name="action" @click="$emit('submit-login')">
                         Login
                     </button>
                 </div>
                 <div class="row center">
-                    <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                    <button class="btn waves-effect waves-hard black" type="submit" name="action" @click="$emit('ke-form-register')">
                         Register
                     </button>
                 </div>

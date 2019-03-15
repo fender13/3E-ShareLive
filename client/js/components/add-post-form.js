@@ -106,3 +106,4 @@ new Vue({
         captionInput: ""
     }
 });
+

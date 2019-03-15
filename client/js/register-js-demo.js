@@ -11,23 +11,7 @@ const app = new Vue({
         posisiton: "home"
     },
     methods: {
-        userRegister: function(username, email, password) {
-            this.username = username
-            this.email = email
-            this.password = password
-
-            axios.post(`${url}/user/register`, {
-                username: this.username,
-                email: this.email,
-                password: this.password
-            })
-            .then(({ data }) => {
-                console.log(data)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        }
+        
     }
     
 })
