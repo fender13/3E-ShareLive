@@ -28,54 +28,121 @@
             </div>
         </nav>
 
-        <!-- ----------------[ALL POSTS]--------------------- -->
-        <div class="explore-content" id="all-posts">
-            <div class="container">
+        
+
+        <div hidden id="app">
+            <!-- ----------------[REGISTER]--------------------- -->
+            <div id="register-form" class="container">
                 <div class="row">
-                    <div class="col" id="content-container">
-                        <div class="col s6 offset-s3" id="one-post">
-                            <div class="card" id="post">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="background2.jpg" />
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Title<i class="material-icons right">more_vert</i></span>
-                                    <!-- <p><a href="#">This is a link</a></p> -->
-                                    <!-- ----------------[FACEBOOK SHARE BUTTON]--------------------- -->
-                                    <div class="fb-share-button" data-href="https://cdn.shibe.online/shibes/45552b6892c3ac5f2958b9eb4784b73e30df26d7.jpg" data-layout="button_count"></div>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    <form class="container col s4 offset-s4">
+                        <h1 class="center">Register</h1>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="username" type="text" class="validate" />
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field inline col s12">
+                                <input id="email_inline" type="email" class="validate" />
+                                <label for="email_inline">Email</label>
+                                <span class="helper-text" data-error="wrong" data-success="right"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate" />
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ----------------[LOGIN]--------------------- -->
+            <div id="login-form" class="container">
+                <div class="row">
+                    <form class="container col s4 offset-s4" id="login-form-border">
+                        <h1 class="center">Login</h1>
+                        <div class="row">
+                            <div class="input-field inline col s12">
+                                <input id="email_inline" type="email" class="validate" />
+                                <label for="email_inline">Email</label>
+                                <span class="helper-text" data-error="wrong" data-success="right"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate" />
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                                Login
+                            </button>
+                        </div>
+                        <div class="row center">
+                            <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ----------------[ALL POSTS]--------------------- -->
+            <div class="explore-content" id="all-posts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col" id="content-container">
+                            <div class="col s6 offset-s3" id="one-post">
+                                <div class="card" id="post">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="background2.jpg" />
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Title<i class="material-icons right">more_vert</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                        <!-- ----------------[FACEBOOK SHARE BUTTON]--------------------- -->
+                                        <div class="fb-share-button" data-href="https://cdn.shibe.online/shibes/45552b6892c3ac5f2958b9eb4784b73e30df26d7.jpg" data-layout="button_count"></div>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Caption<i class="material-icons right">close</i></span>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col s2" style="position: fixed; right: 15rem;">
-                        <div id="person-profile" class="card grey darken-3">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="https://ya-webdesign.com/images/profile-avatar-png-15.png" />
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator white-text text-darken-4">John Doe<i class="material-icons right">more_vert</i></span>
-                                <p>
-                                    <a href="#">edit profile</a>
-                                </p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>
-                                    Here is some more information about this product that is only revealed once clicked on.
-                                </p>
+                        <div class="col s2" style="position: fixed; right: 15rem;">
+                            <div id="person-profile" class="card grey darken-3">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="https://ya-webdesign.com/images/profile-avatar-png-15.png" />
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator white-text text-darken-4">John Doe<i class="material-icons right">more_vert</i></span>
+                                    <p>
+                                        <a href="#">edit profile</a>
+                                    </p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                    <p>
+                                        Here is some more information about this product that is only revealed once clicked on.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div hidden id="app">
             <!-- ----------------[ADD POSTS]--------------------- -->
             <div id="add-post" class="container">
                 <div class="row">
@@ -89,8 +156,8 @@
                                     <form class="col s12">
                                         <div class="row">
                                             <div class="input-field col s8 offset-s2">
-                                                <input id="title" type="text" class="validate" autocomplete="off" />
-                                                <label for="title">Title</label>
+                                                <input id="caption" type="text" class="validate" autocomplete="off" />
+                                                <label for="caption">Caption</label>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -244,6 +311,9 @@
             })(document, "script", "facebook-jssdk");
         </script>
 
+        <!-- ----------------[COMPONENT PROPERTY]--------------------- -->
+        <script src="./js/component/add-post-form.js"></script>
+        
         <!-- ----------------[MATERIALIZE PROPERTY]--------------------- -->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
