@@ -3,33 +3,45 @@ Vue.component("addPost", {
         return {
             captionInput: "",
             file: ""
-        }
+        };
     },
     methods: {
         updateCaption(caption) {
-            this.captionInput = caption
+            this.captionInput = caption;
         },
         updateFile(file) {
-            this.file = file
+            this.file = file;
         },
         submitNewPhoto() {
-            // console.log(this.captionInput, this.file,'=============================')
-            axios.post({
-                url: 'http://localhost:3000/share/upload',
-                data: {
-                    name: this.captionInput,
-                    path: this.file,
-                    userId: "5c8b11aeca95ba34f21a1e59"
-                }
-            })
-            .then(createdPost => {
-                console.log(createdPost)
+            console.log("masok submittttttt:::::::::");
+            console.log(this.captionInput, typeof this.file, "=============================");
+            let dataFormat = new FormData();
+            dataFormat.append("image", this.$refs.file.files[0]);
+            // data.append("name", this.name);
 
-            })  
-            .catch(err => {
-                console.log(err)
-            })
-
+            console.log(dataFormat, "ini dataaaaaaaaaaaaaaa");
+            axios
+                .post("http://localhost:3000/share/upload", {
+                    file:  new FormData().append("image", this.$refs.file.files[0]),
+                    data: {
+                    },
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                })
+                .then(({ createdPost }) => {
+                    this.name = "";
+                    this.file = "";
+                    console.log("======SUCCESS POST NEW PHOTO=====", createdPost);
+                    console.log(createdPost);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        },
+        fileHandle(event) {
+            console.log("masuk file handle", this.$refs.file.files[0]);
+            // this.file = this.$refs.file.files[0];
         }
     },
     template: `
@@ -42,7 +54,7 @@ Vue.component("addPost", {
                         Upload Photo
                     </h3>
                     <div class="row">
-                        <form class="col s12" @submit.prevent="submitNewPhoto()">
+                        <form class="col s12" enctype="multipart/form-data"  @submit.prevent="submitNewPhoto()">
                             <div class="row">
                                 <div class="input-field col s8 offset-s2">
                                     <input id="caption" type="text" class="validate" autocomplete="off" :value="captionInput" @input="updateCaption($event.target.value)"/>
@@ -54,10 +66,10 @@ Vue.component("addPost", {
                                     <div class="file-field input-field">
                                         <div class="btn grey darken-3">
                                             <span>File</span>
-                                            <input type="file" />
+                                            <input type="file" ref="file" :value="file" @change="fileHandle()" />
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" :value="file" @change="updateFile($event.target.value)"/>
+                                            <input class="file-path validate" type="text"/>
                                         </div>
                                     </div>
                                 </div>
@@ -91,13 +103,6 @@ Vue.component("addPost", {
 new Vue({
     el: "#app",
     data: {
-        // captionInput: "",
-    },
+        captionInput: ""
+    }
 });
-
-
-{/* <div id="app">
-            <!-- <add-post v-model="addPost"> -->
-            
-            <add-post v-model="captionInput">
-        </div> */}
