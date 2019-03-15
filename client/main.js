@@ -72,47 +72,51 @@ const app = new Vue({
         },
 
         userData() {
-            axios.get().then(({ data }) => {
-                this.username = data.username;
-                this.email = data.username;
-            });
+            axios
+                .get()
+                .then(({ data }) => {
+                    this.username = data.username;
+                    this.email = data.username;
+                });
         },
 
-        userLogin: function(payload) {
+        userLogin(payload) {
             this.username = payload.username
             this.password = payload.password
 
-            axios.post(`${url}/user/login`, {
-                username: this.username,
-                password: this.password
-            })
-            .then(({ data }) => {
-                this.onClickHome()
-                this.isLogin = true
-                localStorage.setItem('token', data.token)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+            axios
+                .post(`${url}/user/login`, {
+                    username: this.username,
+                    password: this.password
+                })
+                .then(({ data }) => {
+                    this.onClickHome()
+                    this.isLogin = true
+                    localStorage.setItem('token', data.token)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         },
 
-        userRegister: function(payload) {
+        userRegister(payload) {
             this.username = payload.username
             this.email = payload.email
             this.password = payload.password
 
-            axios.post(`${url}/user/register`, {
-                username: this.username,
-                email: this.email,
-                password: this.password
-            })
-            .then(({ data }) => {
-                this.onClickLogin()
-                console.log(data)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+            axios
+                .post(`${url}/user/register`, {
+                    username: this.username,
+                    email: this.email,
+                    password: this.password
+                })
+                .then(({ data }) => {
+                    this.onClickLogin()
+                    console.log(data)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         }
     }
 });

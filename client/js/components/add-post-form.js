@@ -81,7 +81,7 @@ Vue.component("addPost", {
                             </div>
                             <div class="row center">
                                 <div class="input-field col s8 offset-s2">
-                                    <button class="btn waves-effect waves-hard grey" type="submit" name="action">
+                                    <button class="btn waves-effect waves-hard grey" type="submit" name="action" @click="$emit('back-to-home')">
                                         Cancel
                                         <i class="material-icons right">cancel</i>
                                     </button>
