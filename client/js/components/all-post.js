@@ -30,9 +30,6 @@ Vue.component('all-post',{
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator white-text text-darken-4">John Doe<i class="material-icons right">more_vert</i></span>
-                                    <p>
-                                        <a href="#">edit profile</a>
-                                    </p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
