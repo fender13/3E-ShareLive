@@ -3,20 +3,23 @@ const mongoose = require('mongoose')
 
 class Photo {
     static uploaded(req, res) {
-            console.log(req.file)
+            console.log("FROM SERVER     ",req.file)
             let file = {}
             if (req.file) {
                 file = {
-                    name : req.file.filename,
-                    path : req.file.path,
+                    name : req.file.originalname,
+                    path : "/home/eltim/Desktop/project-week2/3E-ShareLive/server/public/upload",
                     UserId: mongoose.Types.ObjectId()
                 }
                 Share
                     .create(file)
                     .then((data) => {
+                        console.log(data, "IIIIIII");
+                        
                         res.status(201).json(data)
                     })
                     .catch((err) => {
+                        console.log("ERR",err)
                         res.status(400).json(err)
                     })
             }

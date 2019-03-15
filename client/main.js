@@ -3,6 +3,7 @@ let url = "http://localhost:3000";
 const app = new Vue({
     el: "#app",
     data: {
+        captionInput: "",
         title: "",
         username: "",
         email: "",
