@@ -44,7 +44,7 @@
 
         <div id="app">
             <!-- ----------------[NAVBAR]--------------------- -->
-            <navbar-template></navbar-template>
+            <navbar-template @ke-link-upload="onClickUpload"></navbar-template>
             <!-- ----------------[REGISTER]--------------------- -->
             <!-- <template v-if="!isLogin && position ==='register'"> -->
             <div id="register-form" class="container" v-if="!isLogin && position =='register'">
@@ -117,7 +117,7 @@
             </div> -->
 
             <!-- ----------------[ALL POSTS]--------------------- -->
-            <all-post v-if="isLogin && position == 'homepage'"></all-post>
+            <all-post v-if="isLogin && position == 'homepage'" ></all-post>></all-post>
             <!-- <div class="explore-content" id="all-posts">
                 <div class="container">
                     <div class="row">
@@ -165,7 +165,7 @@
             </div> -->
 
             <!-- ----------------[ADD POSTS]--------------------- -->
-            <add-post v-if="isLogin && position == 'upload'"></add-post>
+            <add-post v-if="isLogin && position == 'upload'" @back-to-home="onClickHome"></add-post>
             <!-- <div id="add-post" class="container">
                 <div class="row">
                     <div id="form-add" class="container fixed col s6 offset-s3">
