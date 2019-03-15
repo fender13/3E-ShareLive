@@ -17,14 +17,11 @@ Vue.component("addPost", {
             console.log(this.captionInput, typeof this.file, "=============================");
             let dataFormat = new FormData();
             dataFormat.append("image", this.$refs.file.files[0]);
-            // data.append("name", this.name);
+            dataFormat.append("name", this.captionInput);
 
             console.log(dataFormat, "ini dataaaaaaaaaaaaaaa");
             axios
-                .post("http://localhost:3000/share/upload", {
-                    file:  new FormData().append("image", this.$refs.file.files[0]),
-                    data: {
-                    },
+                .post("http://localhost:3000/share/upload", dataFormat, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     }
