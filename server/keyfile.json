@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hypnotic-camp-234404",
+  "private_key_id": "cac47dce721d9ed07bf3171b80f53b3ae73a0a7e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDivQdZlAep5ktO\npCEMivDsFUEosv06WYdD7MX/yhz9r6uikB9jdSO0z/WKol+aEbgpfycKV09NKtxQ\nkd3jJNRrGXEgadJRFOBuAVwr9RPolKsIt2BKQFntKflpf6BcqQx/UwombtgkbugJ\nzXv7OtQV3Ynfr+LZheyNkjpUqPGazhIcT+C3Wk4ua+uO9iO7smq+KJTuF4AH2L/J\n7TlsYHXlPsmPg+trZyDV2di3sro62Ge4mVXwQoWwnUAUdkbkQvtj7Hab9tYCVIQK\n4b0Sof/Aldn+dz1313T+0AfNPBFMsBNPNEZntbStPxBCnwv98+9zlBbUmjMqTNIl\nf05mfPPlAgMBAAECggEADy0MyWOdkbMe1kApECBamMqhZlp4lYe5hIPcCs9Z2mcA\nK2zPFQaZobgLnMBaesL12x0uHUSTw7v7LA9fVR05dIOq7Tr3/0JQ9Tv1EeIg93+/\n5OD1OnMNMdEN5xBKSPltozYJJ2Ji6CleMY3F3x5kZKRD3qt0mQ+cMiuX6OO37B7/\nl45WrpjYghn9cp7Pbcp+joT80dZ1jrRcbyAXm1Cqe+V9Uo+Uoqwg7Ttg2j2fNWOh\nyxL3DXDMXjQvebVSvnqBLAPF7azUrG1z7ptp/Mzd7uGMv2sKybhycID+zOmk7srW\n+2vZiLFvinUmWjGh5gE87veEcXprI4CBicw803dM8QKBgQD2w59SsmAwnO0QpBtV\n0ZqQzSIHEwN518v3JNZxRx2Av9Nycb5vctZnhgDPfbIGv9w7eIXdiFw6+ifjwjEi\nJ+QB53zExRlKdW42ij8gN0txEoSShVbfqZuOj6kDeKOz60bFwxOMP92Kf5oiZRkc\nnp4UcfdSrKK6+60TbyZzWlL63QKBgQDrOYds9jXIiiRklZML+a4UxLoj0wIVld2A\n3J4qX1CRQgSGW0KgscIXZdUBFApc30mbam5UscsMaZCazYo+3SfBojLxv1wq+ixJ\nHzXwcj0ZL131NyHuHeID2dcD/FPbrVokarneZS72gYbiaBKjQwW6x3VoNXTDcXBT\nDERziFk4qQKBgCcRgcAODbykm8Put4U20knqsGB+WiaIS/qtEmaM49bmiAuuhoAO\npnNte+Nd+zmmVq/zvP3+ANw1jus4a58EwcyrYc2lhwOK5BAugyAOoRsd2293PPHc\nYIyJojCygPiTX3kgEZA67FBpM3YOm5M0acLC6G1md70y64wQJP5OZqThAoGAa8iK\no4UWE/QoxOY84QnhmKakXHH9zIJFYxy0ZNoUAttrU11R5GxPcYU52yqhrPirs8lL\nEQf+8IsWtbhlFnUkGHgIO/nhc9f6nu7sOmc+U+H+fbRrmb6bqAQToEHo8wo1+eXl\nkWBv6ohjlC74C1NUtsdapwuHm17Jh2RhoUbjCzECgYEAzsZuONPpt4PBr3ABQ5OF\ndf+j1Xk5l3VNXug2z1yq3eM4i7NytjVFffWMEnjw1WkwWFMsTkH4iqWcf6clcSv7\nAP02KfnmRSizgzhCnJlSc3qYtYRpNn7UFB0lt8+eZ5b2ASq2EnEJcMrqttuX8zhv\nsRaLjINu2MHriWgYQkPLqHQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "liveshare@hypnotic-camp-234404.iam.gserviceaccount.com",
+  "client_id": "105935285718600358386",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/liveshare%40hypnotic-camp-234404.iam.gserviceaccount.com"
+}
