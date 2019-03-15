@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const upload = require("../middlewares/upload");
 const shareController = require("../controllers/sharingController");
+const image = require("../helpers/images");
 
-router.post("/upload", upload.single("image"), shareController.uploaded);
+router.post("/upload", image.multer.single("image"), image.sendUploadToGCS, shareController.uploaded);
 
 router.get("/", shareController.findAllPhoto);
 router.put("/update/:id", shareController.updateName);

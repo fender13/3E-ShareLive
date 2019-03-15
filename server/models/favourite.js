@@ -4,7 +4,7 @@ const ENV = require('dotenv')
 ENV.config()
 
 const dbName = process.env.DB_NAME
-mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true })
+mongoose.connect(`mongodb+srv://${process.env.username}:${process.env.password}@3e-sharelive-t5ed5.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
 
 const schema = mongoose.Schema
 
