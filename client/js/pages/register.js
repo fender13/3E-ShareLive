@@ -9,7 +9,7 @@ Vue.component('add-register', {
     template: `
     
         <div class="row">
-            <form v-on:submit.prevent="$emit('submit-register', username, email, password)" class="container col s4 offset-s4">
+            <form v-on:submit.prevent="$emit('submit-register', {username: username, email: email, password: password})" class="container col s4 offset-s4">
                 <h1 class="center">Register</h1>
                 <div class="row">
                     <div class="input-field col s12">

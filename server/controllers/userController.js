@@ -24,11 +24,13 @@ class User {
     }
 
     static userLogin(req, res) {
+        console.log(req.body)
         model
             .findOne({
                 username: req.body.username
             })
             .then((data) => {
+                console.log(data)
                 if(!data){
                     res.status(400).json({
                         message: `Wrong username/password`

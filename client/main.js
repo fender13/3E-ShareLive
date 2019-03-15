@@ -78,9 +78,9 @@ const app = new Vue({
             });
         },
 
-        userLogin: function(username, password) {
-            this.username = username
-            this.password = password
+        userLogin: function(payload) {
+            this.username = payload.username
+            this.password = payload.password
 
             axios.post(`${url}/user/login`, {
                 username: this.username,
@@ -96,10 +96,10 @@ const app = new Vue({
             })
         },
 
-        userRegister: function(username, email, password) {
-            this.username = username
-            this.email = email
-            this.password = password
+        userRegister: function(payload) {
+            this.username = payload.username
+            this.email = payload.email
+            this.password = payload.password
 
             axios.post(`${url}/user/register`, {
                 username: this.username,
