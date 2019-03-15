@@ -7,7 +7,7 @@ Vue.component('add-register', {
         }
     },
     template: `
-    <div id="register-form" class="container">
+    
         <div class="row">
             <form v-on:submit.prevent="$emit('submit-register', username, email, password)" class="container col s4 offset-s4">
                 <h1 class="center">Register</h1>
@@ -31,12 +31,12 @@ Vue.component('add-register', {
                     </div>
                 </div>
                 <div class="row center">
-                    <button class="btn waves-effect waves-hard black" type="submit" name="action">
+                    <button class="btn waves-effect waves-hard black" type="submit" name="action" @click="$emit('submit-register')">
                         Submit
                     </button>
                 </div>
             </form>
         </div>
-    </div>
+    
     `
 })

@@ -88,16 +88,16 @@ Vue.component("addPost", {
     `
 });
 
-new Vue({
-    el: "#app",
-    data: {
-        // captionInput: "",
-    },
-});
+// new Vue({
+//     el: "#app",
+//     data: {
+//         // captionInput: "",
+//     },
+// });
 
 
-{/* <div id="app">
-            <!-- <add-post v-model="addPost"> -->
+// {/* <div id="app">
+//             <!-- <add-post v-model="addPost"> -->
             
-            <add-post v-model="captionInput">
-        </div> */}
+//             <add-post v-model="captionInput">
+//         </div> */}
