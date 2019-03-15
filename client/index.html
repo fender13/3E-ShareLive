@@ -15,10 +15,15 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+        <!-- ------------------[CDN]---------------------- -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <!-- ----------------[NAVBAR]--------------------- -->
-        <nav class="white" role="navigation">
+        <!-- <nav class="white" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="brand-logo black-text">3E-LiveShare</a>
                 <ul class="right hide-on-med-and-down">
@@ -26,13 +31,20 @@
                     <li><a href="#" class="black-text">Upload Photo</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav> -->
 
         
 
-        <div hidden id="app">
+        <div id="app">
+            <!-- ----------------[NAVBAR]--------------------- -->
+            <navbar-template></navbar-template>
             <!-- ----------------[REGISTER]--------------------- -->
-            <div id="register-form" class="container">
+            <!-- <template v-if="!isLogin && position ==='register'"> -->
+            <div id="register-form" class="container" v-if="!isLogin && position =='register'">
+                    <add-register v-on:submit-register="userRegister"></add-register>
+            </div>
+            <!-- </template> -->
+            <!-- <div id="register-form" class="container">
                 <div class="row">
                     <form class="container col s4 offset-s4">
                         <h1 class="center">Register</h1>
@@ -62,10 +74,11 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
 
             <!-- ----------------[LOGIN]--------------------- -->
-            <div id="login-form" class="container">
+            <add-login v-on:submit-login="userLogin" v-if="!isLogin && position == 'login'" @ke-form-register="onClickRegister"></add-login>
+            <!-- <div id="login-form" class="container">
                 <div class="row">
                     <form class="container col s4 offset-s4" id="login-form-border">
                         <h1 class="center">Login</h1>
@@ -94,10 +107,11 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
 
             <!-- ----------------[ALL POSTS]--------------------- -->
-            <div class="explore-content" id="all-posts">
+            <all-post v-if="isLogin && position == 'homepage'"></all-post>
+            <!-- <div class="explore-content" id="all-posts">
                 <div class="container">
                     <div class="row">
                         <div class="col" id="content-container">
@@ -107,10 +121,10 @@
                                         <img class="activator" src="background2.jpg" />
                                     </div>
                                     <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Title<i class="material-icons right">more_vert</i></span>
+                                        <span class="card-title activator grey-text text-darken-4">Title<i class="material-icons right">more_vert</i></span> -->
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                         <!-- ----------------[FACEBOOK SHARE BUTTON]--------------------- -->
-                                        <div class="fb-share-button" data-href="https://cdn.shibe.online/shibes/45552b6892c3ac5f2958b9eb4784b73e30df26d7.jpg" data-layout="button_count"></div>
+                                        <!-- <div class="fb-share-button" data-href="https://cdn.shibe.online/shibes/45552b6892c3ac5f2958b9eb4784b73e30df26d7.jpg" data-layout="button_count"></div>
                                     </div>
                                     <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4">Caption<i class="material-icons right">close</i></span>
@@ -141,10 +155,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- ----------------[ADD POSTS]--------------------- -->
-            <div id="add-post" class="container">
+            <add-post v-if="isLogin && position == 'upload'"></add-post>
+            <!-- <div id="add-post" class="container">
                 <div class="row">
                     <div id="form-add" class="container fixed col s6 offset-s3">
                         <div class="row">
@@ -195,11 +210,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div id="home-page">
+            <homepage-template v-if="!isLogin && position == 'homepage'" @ke-form-login="onClickLogin"></homepage-template>
+            <!-- <div id="home-page"> -->
                 <!-- ----------------[FOTO #1]--------------------- -->
-                <div id="index-banner" class="parallax-container">
+                <!-- <div id="index-banner" class="parallax-container">
                     <div class="section no-pad-bot">
                         <div class="container">
                             <br /><br />
@@ -214,13 +230,13 @@
                         </div>
                     </div>
                     <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1" /></div>
-                </div>
+                </div> -->
 
                 <!-- ----------------[POINTS]--------------------- -->
-                <div class="container">
-                    <div class="section">
+                <!-- <div class="container">
+                    <div class="section"> -->
                         <!--   Icon Section   -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col s12 m4">
                                 <div class="icon-block">
                                     <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
@@ -249,10 +265,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- ----------------[FOTO #2]--------------------- -->
-                <div class="parallax-container valign-wrapper">
+                <!-- <div class="parallax-container valign-wrapper">
                     <div class="section no-pad-bot">
                         <div class="container">
                             <div class="row center">
@@ -261,10 +277,10 @@
                         </div>
                     </div>
                     <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2" /></div>
-                </div>
+                </div> -->
 
                 <!-- ----------------[CONTACT US]--------------------- -->
-                <div class="container">
+                <!-- <div class="container">
                     <div class="section">
                         <div class="row">
                             <div class="col s12 center">
@@ -274,10 +290,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- ----------------[FOTO #3]--------------------- -->
-                <div class="parallax-container valign-wrapper">
+                <!-- <div class="parallax-container valign-wrapper">
                     <div class="section no-pad-bot">
                         <div class="container">
                             <div class="row center">
@@ -286,15 +302,15 @@
                         </div>
                     </div>
                     <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3" /></div>
-                </div>
+                </div> -->
 
                 <!-- ----------------[FOOTER]--------------------- -->
-                <footer class="page-footer teal">
+                <!-- <footer class="page-footer teal" style="min-height: 100vh">
                     <div class="footer-copyright">
                         <div class="container">Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a></div>
                     </div>
                 </footer>
-            </div>
+            </div> -->
         </div>
 
         <!-- ----------------[FACEBOOK PROPERTY]--------------------- -->
@@ -311,9 +327,19 @@
             })(document, "script", "facebook-jssdk");
         </script>
 
+
+        <!-- -------------------[COMPONENTS]---------------------------- -->
+        <script src="./js/components/add-post-form.js"></script>
+        <script src="./js/components/all-post.js"></script>
+        <script src="./js/components/homepage.js"></script>
+        <script src="./js/components/navbar.js"></script>
+        <script src="./js/pages/login.js"></script>
+        <script src="./js/pages/register.js"></script>
+
         <!-- ----------------[MATERIALIZE PROPERTY]--------------------- -->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+        <script src="/client/main.js"></script>
     </body>
 </html>

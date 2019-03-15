@@ -10,9 +10,8 @@ const app = new Vue({
         imgSrc: "",
         image: [],
         user: [],
-        isLogin: true,
-        isLogout: false,
-        posisiton: "home"
+        isLogin: false,
+        position: "homepage"
     },
 
     created() {
@@ -41,16 +40,24 @@ const app = new Vue({
             });
         },
 
+        onClickLogin(){
+            this.position = "login"
+        },
+
         onClickUpload() {
-            this.posisiton = "upload";
+            this.position = "upload";
         },
 
         onClickHome() {
-            this.posisiton = "home";
+            this.position = "homepage";
         },
 
         onClickProfile() {
-            this.posisiton = "profile";
+            this.position = "profile";
+        },
+
+        onClickRegister(){
+            this.position = 'register'
         },
 
         onClickDelete(index, id) {
@@ -69,6 +76,43 @@ const app = new Vue({
                 this.username = data.username;
                 this.email = data.username;
             });
+        },
+
+        userLogin: function(username, password) {
+            this.username = username
+            this.password = password
+
+            axios.post(`${url}/user/login`, {
+                username: this.username,
+                password: this.password
+            })
+            .then(({ data }) => {
+                this.onClickHome()
+                this.isLogin = true
+                localStorage.setItem('token', data.token)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        },
+
+        userRegister: function(username, email, password) {
+            this.username = username
+            this.email = email
+            this.password = password
+
+            axios.post(`${url}/user/register`, {
+                username: this.username,
+                email: this.email,
+                password: this.password
+            })
+            .then(({ data }) => {
+                this.onClickLogin()
+                console.log(data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
         }
     }
 });

@@ -11,21 +11,7 @@ const app = new Vue({
         posisiton: "home"
     },
     methods: {
-        userLogin: function(username, password) {
-            this.username = username
-            this.password = password
-
-            axios.post(`${url}/user/login`, {
-                username: this.username,
-                password: this.password
-            })
-            .then(({ data }) => {
-                localStorage.setItem('token', data.token)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        }
+        
     }
     
 })
