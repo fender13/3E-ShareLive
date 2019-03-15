@@ -30,8 +30,9 @@ class User {
         })
         .then(function(user) {
             dataUser = user
+            console.log(user)
             if (!user) {
-                res.status(400).json({
+                    res.status(400).json({
                     message: 'EMAIL ATAU PASSWORD ANDA SALAH'
                 })
             } else {
