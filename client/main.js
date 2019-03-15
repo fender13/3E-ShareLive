@@ -117,6 +117,12 @@ const app = new Vue({
                 .catch((err) => {
                     console.log(err)
                 })
+        },
+
+        logout: function() {
+            localStorage.clear()
+            this.isLogin= false
+            this.position = "homepage"
         }
     }
 });

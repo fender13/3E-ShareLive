@@ -97,10 +97,10 @@ Vue.component("addPost", {
     `
 });
 
-new Vue({
-    el: "#app",
-    data: {
-        captionInput: ""
-    }
-});
+// new Vue({
+//     el: "#app",
+//     data: {
+//         captionInput: ""
+//     }
+// });
 
