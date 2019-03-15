@@ -31,6 +31,7 @@ Vue.component("addPost", {
                     this.file = "";
                     console.log("======SUCCESS POST NEW PHOTO=====", createdPost);
                     console.log(createdPost);
+                    // balik lagi ke home
                 })
                 .catch(err => {
                     console.log(err);
@@ -97,10 +98,10 @@ Vue.component("addPost", {
     `
 });
 
-new Vue({
-    el: "#app",
-    data: {
-        captionInput: ""
-    }
-});
+// new Vue({
+//     el: "#app",
+//     data: {
+//         captionInput: ""
+//     }
+// });
 

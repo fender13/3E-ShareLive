@@ -1,9 +1,11 @@
 "use strict";
 require("dotenv").config();
 
-const { Storage } = require("@google-cloud/storage");
+const Storage = require("@google-cloud/storage");
 
 const CLOUD_BUCKET = process.env.CLOUD_BUCKET;
+
+console.log(process.env.KEYFILE_PATH)
 
 const storage = new Storage({
     projectId: process.env.GCLOUD_PROJECT,
@@ -16,7 +18,23 @@ const getPublicUrl = filename => {
     return `https://storage.googleapis.com/${CLOUD_BUCKET}/${filename}`;
 };
 
+const Multer = require("multer"),
+
+multer = Multer({
+    storage: Multer.MemoryStorage,
+        limits: {
+            fileSize: 5 * 1024 * 1024
+        }
+})
+
 const sendUploadToGCS = (req, res, next) => {
+
+    // let mltr = multer();
+    // mltr.single('image');
+
+
+    console.log("FROM MIDDLEWARE, ", req.file)
+
     if (!req.file) {
         return next();
     }
@@ -32,13 +50,16 @@ const sendUploadToGCS = (req, res, next) => {
 
     stream.on("error", err => {
         req.file.cloudStorageError = err;
+        console.log(err)
         next(err);
     });
 
     stream.on("finish", () => {
         req.file.cloudStorageObject = gcsname;
+        console.log("---- lalallaa-",)
         file.makePublic().then(() => {
             req.file.cloudStoragePublicUrl = getPublicUrl(gcsname);
+            console.log("-----")
             next();
         });
     });
@@ -46,14 +67,7 @@ const sendUploadToGCS = (req, res, next) => {
     stream.end(req.file.buffer);
 };
 
-const Multer = require("multer"),
-    multer = Multer({
-        storage: Multer.MemoryStorage,
-        limits: {
-            fileSize: 5 * 1024 * 1024
-        }
-        // dest: '../images'
-    });
+
 
 module.exports = {
     getPublicUrl,
